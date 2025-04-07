@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <AnchorPane prefHeight="144.0" prefWidth="1280.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="104.0" fitWidth="84.0" layoutX="47.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../fotos/Logo-BitHouse.png" />
+                    </image>
+                </ImageView>
+                <Button layoutX="206.0" layoutY="42.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="156.0" style="-fx-background-color: #363432;" text="Busqueda">
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="0.006729475100942127">
+                                    <color>
+                                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            <Button layoutX="407.0" layoutY="42.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="239.0" style="-fx-background-color: #363432;" text="Mis publicaciones">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="1168.0" layoutY="34.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="95.0" style="-fx-background-color: #363432;">
+               <graphic>
+                  <ImageView fitHeight="78.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/user-128.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>
