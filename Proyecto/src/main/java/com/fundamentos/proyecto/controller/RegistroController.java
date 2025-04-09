@@ -9,7 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 
-public class VerificacionController {
+public class RegistroController {
 
     @FXML
     private TextField txtNombre;
