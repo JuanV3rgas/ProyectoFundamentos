@@ -1,4 +1,4 @@
 package com.fundamentos.proyecto.controller;
 
-public class PublicarController {
+public class CrearPublicacionController {
 }
