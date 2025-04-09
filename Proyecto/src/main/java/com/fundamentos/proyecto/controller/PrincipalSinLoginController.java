@@ -1,4 +1,4 @@
 package com.fundamentos.proyecto.controller;
 
-public class CrearPublicacionController {
+public class PrincipalSinLoginController {
 }
