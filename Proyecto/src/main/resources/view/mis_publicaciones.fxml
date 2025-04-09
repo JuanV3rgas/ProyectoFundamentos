@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="837.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.PrincipalController">
+   <top>
+      <AnchorPane prefHeight="83.0" prefWidth="1280.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="96.0" fitWidth="81.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/Logo-BitHouse.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="153.0" layoutY="18.0" prefHeight="62.0" prefWidth="635.0" text="Mis Publicaciones" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color blue="1.0" green="0.43921568989753723" red="0.9450980424880981" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="0.10588235408067703" green="0.9686274528503418" red="0.8549019694328308" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="102.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <Pane prefHeight="122.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="201.0" fitWidth="456.0" layoutX="59.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="201.0" fitWidth="358.0" layoutX="59.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/5.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="445.0" layoutY="69.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="142.0" style="-fx-background-color: #363432;" text="Editar">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#f170ff" offset="0.006729475100942127" />
+                        <Stop color="#daf71b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button layoutX="438.0" layoutY="281.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="142.0" style="-fx-background-color: #363432;" text="Editar">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#f170ff" offset="0.006729475100942127" />
+                        <Stop color="#daf71b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button layoutX="446.0" layoutY="137.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="141.0" style="-fx-background-color: #363432;" text="Eliminar">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#f170ff" />
+                        <Stop color="#daf71b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+            <Button layoutX="439.0" layoutY="345.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="141.0" style="-fx-background-color: #363432;" text="Eliminar">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#f170ff" />
+                        <Stop color="#daf71b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
