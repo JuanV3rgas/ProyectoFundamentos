@@ -1,5 +1,8 @@
 package com.fundamentos.proyecto.dao;
 
+import com.fundamentos.proyecto.model.Usuario;
+import com.fundamentos.proyecto.util.DBConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -112,24 +115,36 @@ public class UsuarioDAO {
     }
 
     public static boolean crearUsuario(String nombre, String apellido, String cedula, String correo
-                                       ,String contrasena, String pregunta, String respuesta, String celular) {
+            ,String contrasena, String pregunta, String respuesta, String celular) {
 
         if(!(containsOnlyDigitsUsingIsDigit(celular))){
             return false;
         }
 
-        String sql = "INSERT INTO USUARIO(nombre, apellido, cedula, correo, contrasena, pregunta_seguridad, respuesta_pregunta_seguridad, numero_telefonico) VALUES (?,?,?,?,?,?,?,?)\n";
+        String sql = "INSERT INTO USUARIO("
+                + "nombre, "
+                + "apellido, "
+                + "cedula, "
+                + "correo, "
+                + "contrasena, "
+                + "pregunta_seguridad, "
+                + "respuesta_pregunta_seguridad, "
+                + "numero_telefonico"
+                + ") VALUES (?,?,?,?,?,?,?,?)";
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(1, correo);
-            ps.setString(2, contrasena);
+
+            // Coincidir las columnas con las variables
+            ps.setString(1, nombre);
+            ps.setString(2, apellido);
             ps.setString(3, cedula);
             ps.setString(4, correo);
             ps.setString(5, contrasena);
             ps.setString(6, pregunta);
             ps.setString(7, respuesta);
             ps.setString(8, celular);
+
             int filasAfectadas = ps.executeUpdate();
             return filasAfectadas > 0;
 
@@ -146,4 +161,72 @@ public class UsuarioDAO {
         }
         return true;
     }
+
+    public static boolean validarRecuperacion(String correo, String pregunta_comboBox, String respuesta_comboBox) {
+        String sql = "SELECT COUNT(*) FROM USUARIO WHERE correo = ? AND pregunta_seguridad = ? AND respuesta_pregunta_seguridad = ?";
+
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, correo);
+            ps.setString(2, pregunta_comboBox);
+            ps.setString(3, respuesta_comboBox);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
+    public static boolean cambiarContrasena(String correo, String nuevaContrasena) {
+        correo = correo.trim();
+
+        String sql = "UPDATE USUARIO SET contrasena = ? WHERE correo = ?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, nuevaContrasena);
+            ps.setString(2, correo);
+
+            int filasAfectadas = ps.executeUpdate();
+            return filasAfectadas > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    ///  select from INMUEBLE where estrato = ? and tipo = ?
+    public static Usuario obtenerUsuario(String correo, String contrasena) {
+        String sql = "SELECT * FROM USUARIO WHERE correo = ? AND contrasena = ?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, correo.trim());
+            ps.setString(2, contrasena);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    int id = rs.getInt("ID");
+                    String nombre = rs.getString("Nombre");
+                    String apellido = rs.getString("Apellido");
+                    int cedula = rs.getInt("Cedula");
+                    String correoU = rs.getString("Correo");
+                    String contrasenaU = rs.getString("Contrasena");
+                    String preguntaSeguridad = rs.getString("pregunta_seguridad");
+                    String respuesta = rs.getString("respuesta_pregunta_seguridad");
+                    String celular = rs.getString("numero_telefonico");
+
+                    return new Usuario(id, nombre, apellido, cedula, correo, contrasena, preguntaSeguridad, respuesta, celular);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
 }

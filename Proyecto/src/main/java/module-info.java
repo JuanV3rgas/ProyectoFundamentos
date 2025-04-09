@@ -4,6 +4,7 @@ module com.fundamentos.proyecto {
     requires org.controlsfx.controls;
     requires java.sql;
     requires com.h2database;
+    requires java.desktop;
 
     opens com.fundamentos.proyecto.controller to javafx.fxml;
     opens com.fundamentos.proyecto.app to javafx.fxml;

@@ -1,4 +1,4 @@
-package com.fundamentos.proyecto.dao;
+package com.fundamentos.proyecto.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
