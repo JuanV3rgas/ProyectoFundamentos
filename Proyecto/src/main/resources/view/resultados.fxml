@@ -16,9 +16,11 @@
                 <TableColumn fx:id="colTipo" prefWidth="100" text="Tipo" />
                 <TableColumn fx:id="colEstrato" prefWidth="80" text="Estrato" />
                 <TableColumn fx:id="colArea" prefWidth="80" text="Área" />
-                <TableColumn fx:id="colDireccion" prefWidth="200" text="Dirección" />
-                <TableColumn fx:id="colPrecio" prefWidth="100" text="Precio" />
-                <TableColumn fx:id="colImagen" prefWidth="120" text="Imagen" />
+                <TableColumn fx:id="colDireccion" prefWidth="130.0" text="Dirección" />
+                <TableColumn fx:id="colPrecio" prefWidth="124.0" text="Precio" />
+                <TableColumn fx:id="colImagen" prefWidth="81.0" text="Imagen" />
+                <TableColumn fx:id="colHabitaciones" minWidth="0.0" prefWidth="90.0" text="Habitaciones" />
+                <TableColumn fx:id="colBanos" prefWidth="138.0" text="Baños" />
             </columns>
         </TableView>
         <AnchorPane prefHeight="60.0" prefWidth="784.0" style="-fx-background-color: #3B3C40;">
