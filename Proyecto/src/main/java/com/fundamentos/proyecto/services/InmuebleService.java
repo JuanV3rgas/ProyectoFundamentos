@@ -4,7 +4,7 @@ import com.fundamentos.proyecto.dao.InmuebleDAO;
 import com.fundamentos.proyecto.model.Inmueble;
 import java.math.BigDecimal;
 import java.util.List;
-
+//Clase inmuebleService
 
 public class InmuebleService {
 

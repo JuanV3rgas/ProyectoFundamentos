@@ -2,6 +2,7 @@ package com.fundamentos.proyecto.model;
 
 import java.math.BigDecimal;
 
+//clase Inmueble
 public class Inmueble {
     private int id;
     private String tipo;

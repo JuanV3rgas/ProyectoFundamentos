@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+//Clase Inmueble
 public class InmuebleDAO {
 
     public static int insertarInmueble(String tipo, String estado, String direccion, int estrato,

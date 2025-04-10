@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import java.math.BigDecimal;
 import java.util.List;
 
+//controlador de busqueda
+
 public class BusquedaController {
 
     @FXML private ComboBox<String> comboTipo;
