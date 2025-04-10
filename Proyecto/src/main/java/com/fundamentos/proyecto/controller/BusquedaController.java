@@ -20,6 +20,9 @@ public class BusquedaController {
     @FXML private TextField txtAreaMax;
     @FXML private TextField txtPrecioMin;
     @FXML private TextField txtPrecioMax;
+    @FXML private TextField txtHabitaciones;
+    @FXML private TextField txtBanos;
+
 
     private InmuebleService inmuebleService = new InmuebleService();
     private CambiaEscenas cambia = new CambiaEscenas();
@@ -28,7 +31,7 @@ public class BusquedaController {
     public void initialize() {
         // Llena el comboTipo con opciones
         comboTipo.getItems().addAll("casa", "apartamento", "local");
-        comboEstado.getItems().addAll("nueva", "usada", "Obra Gris", "Obra Negra");
+        comboEstado.getItems().addAll("nueva", "usada", "obra gris", "obra negra");
     }
 
     @FXML
@@ -41,9 +44,11 @@ public class BusquedaController {
         Double areaMax = parseDouble(txtAreaMax.getText());
         BigDecimal precioMin = parseBigDecimal(txtPrecioMin.getText());
         BigDecimal precioMax = parseBigDecimal(txtPrecioMax.getText());
+        Integer habitaciones = parseInteger(txtHabitaciones.getText());
+        Integer banos = parseInteger(txtBanos.getText());
 
         List<Inmueble> resultados = inmuebleService.filtrarInmuebles(tipo, estado, estratoMin, estratoMax,
-                areaMin, areaMax, precioMin, precioMax);
+                areaMin, areaMax, precioMin, precioMax, habitaciones, banos);
 
         // Cambia a la pantalla de resultados pasando los resultados
         cambia.cambiarEscenaConResultados("/view/resultados.fxml", resultados);

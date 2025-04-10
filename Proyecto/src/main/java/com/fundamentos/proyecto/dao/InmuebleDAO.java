@@ -12,9 +12,6 @@ public class InmuebleDAO {
     public static int insertarInmueble(String tipo, String estado, String direccion, int estrato,
                                        int habitaciones, int banos, BigDecimal precio,
                                        byte[] imagen1, double area) {
-        // Nota: El orden de los parámetros es:
-        // 1: tipo, 2: estado, 3: direccion, 4: estrato,
-        // 5: habitaciones, 6: banos, 7: precio, 8: imagen1, 9: imagen2, 10: imagen3, 11: area
         String sql = "INSERT INTO INMUEBLE(tipo, estado, direccion, estrato, "
                 + "habitaciones, banos, precio, imagen, area) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -29,7 +26,8 @@ public class InmuebleDAO {
             ps.setInt(6, banos);
             ps.setBigDecimal(7, precio);
             ps.setBytes(8, imagen1);
-            ps.setDouble(11, area);
+            // Corrección: Se usa índice 9 en lugar de 11
+            ps.setDouble(9, area);
 
             int filas = ps.executeUpdate();
             if (filas > 0) {
@@ -53,7 +51,9 @@ public class InmuebleDAO {
                                                   Double areaMin,
                                                   Double areaMax,
                                                   BigDecimal precioMin,
-                                                  BigDecimal precioMax) {
+                                                  BigDecimal precioMax,   // Se agregó la coma aquí
+                                                  Integer habitaciones,
+                                                  Integer banos) {
         List<Inmueble> lista = new ArrayList<>();
         StringBuilder sql = new StringBuilder("SELECT * FROM INMUEBLE WHERE 1=1 ");
         List<Object> parametros = new ArrayList<>();
@@ -63,8 +63,9 @@ public class InmuebleDAO {
             parametros.add(tipo);
         }
         if (estado != null && !estado.isEmpty()) {
-            sql.append("AND tipo = ? ");
-            parametros.add(tipo);
+            sql.append("AND estado = ? ");
+            // Corrección: se agrega el parámetro 'estado' en lugar de 'tipo'
+            parametros.add(estado);
         }
         if (estratoMin != null) {
             sql.append("AND estrato >= ? ");
@@ -90,6 +91,15 @@ public class InmuebleDAO {
             sql.append("AND precio <= ? ");
             parametros.add(precioMax);
         }
+        if (habitaciones != null) {
+            sql.append("AND habitaciones <= ? ");
+            parametros.add(habitaciones);
+        }
+        if (banos != null) {
+            sql.append("AND banos >= ? ");
+            // Corrección: se agrega 'banos' en lugar de 'habitaciones'
+            parametros.add(banos);
+        }
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql.toString())) {
@@ -108,7 +118,7 @@ public class InmuebleDAO {
                     inm.setBanos(rs.getInt("banos"));
                     inm.setArea(rs.getDouble("area"));
                     inm.setPrecio(rs.getBigDecimal("precio"));
-                    // Puedes agregar asignación de imágenes si necesitas.
+                    // Asignar imagen u otros campos si lo necesitas.
 
                     lista.add(inm);
                 }

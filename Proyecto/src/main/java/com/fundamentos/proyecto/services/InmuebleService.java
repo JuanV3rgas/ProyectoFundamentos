@@ -28,7 +28,10 @@ public class InmuebleService {
                                            Double areaMin,
                                            Double areaMax,
                                            BigDecimal precioMin,
-                                           BigDecimal precioMax) {
-        return InmuebleDAO.filtrarInmuebles(tipo, estado, estratoMin, estratoMax, areaMin, areaMax, precioMin, precioMax);
+                                           BigDecimal precioMax,
+                                           Integer habitaciones,
+                                           Integer banos){
+
+        return InmuebleDAO.filtrarInmuebles(tipo, estado, estratoMin, estratoMax, areaMin, areaMax, precioMin, precioMax, habitaciones, banos);
     }
 }
