@@ -16,7 +16,7 @@ public class InmuebleService {
 
     public int registrarInmueble(String tipo, String estado, String direccion, int estrato,
                                  int habitaciones, int banos, double area, BigDecimal precio,
-                                 byte[] imagen1, byte[] imagen2, byte[] imagen3) {
+                                 byte[] imagen1) {
         return inmuebleDAO.insertarInmueble(tipo, estado, direccion, estrato, habitaciones,
                 banos, precio, imagen1, area);
     }
@@ -29,6 +29,6 @@ public class InmuebleService {
                                            Double areaMax,
                                            BigDecimal precioMin,
                                            BigDecimal precioMax) {
-        return InmuebleDAO.filtrarInmuebles(tipo, estratoMin, estratoMax, areaMin, areaMax, precioMin, precioMax);
+        return InmuebleDAO.filtrarInmuebles(tipo, estado, estratoMin, estratoMax, areaMin, areaMax, precioMin, precioMax);
     }
 }
