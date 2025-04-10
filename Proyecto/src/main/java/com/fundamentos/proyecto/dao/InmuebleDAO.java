@@ -47,6 +47,7 @@ public class InmuebleDAO {
     }
 
     public static List<Inmueble> filtrarInmuebles(String tipo,
+                                                  String estado,
                                                   Integer estratoMin,
                                                   Integer estratoMax,
                                                   Double areaMin,
@@ -58,6 +59,10 @@ public class InmuebleDAO {
         List<Object> parametros = new ArrayList<>();
 
         if (tipo != null && !tipo.isEmpty()) {
+            sql.append("AND tipo = ? ");
+            parametros.add(tipo);
+        }
+        if (estado != null && !estado.isEmpty()) {
             sql.append("AND tipo = ? ");
             parametros.add(tipo);
         }
