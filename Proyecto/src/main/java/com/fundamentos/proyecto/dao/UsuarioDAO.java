@@ -199,7 +199,7 @@ public class UsuarioDAO {
             throw new RuntimeException(e);
         }
     }
-    ///  select from INMUEBLE where estrato = ? and tipo = ?
+
     public static Usuario obtenerUsuario(String correo, String contrasena) {
         String sql = "SELECT * FROM USUARIO WHERE correo = ? AND contrasena = ?";
         try (Connection con = DBConnection.getConnection();
@@ -221,6 +221,35 @@ public class UsuarioDAO {
                     String celular = rs.getString("numero_telefonico");
 
                     return new Usuario(id, nombre, apellido, cedula, correo, contrasena, preguntaSeguridad, respuesta, celular);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+
+    public static Usuario obtenerUsuarioCorreo(String correo) {
+        String sql = "SELECT * FROM USUARIO WHERE correo = ?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, correo.trim());
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    int id = rs.getInt("ID");
+                    String nombre = rs.getString("Nombre");
+                    String apellido = rs.getString("Apellido");
+                    int cedula = rs.getInt("Cedula");
+                    String correoU = rs.getString("Correo");
+                    String contrasenaU = rs.getString("Contrasena");
+                    String preguntaSeguridad = rs.getString("pregunta_seguridad");
+                    String respuesta = rs.getString("respuesta_pregunta_seguridad");
+                    String celular = rs.getString("numero_telefonico");
+
+                    return new Usuario(id, nombre, apellido, cedula, correo, contrasenaU, preguntaSeguridad, respuesta, celular);
                 }
             }
         } catch (SQLException e) {

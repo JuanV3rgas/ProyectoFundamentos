@@ -13,6 +13,7 @@ import java.util.List;
 public class BusquedaController {
 
     @FXML private ComboBox<String> comboTipo;
+    @FXML private ComboBox<String> comboEstado;
     @FXML private TextField txtEstratoMin;
     @FXML private TextField txtEstratoMax;
     @FXML private TextField txtAreaMin;
@@ -27,11 +28,13 @@ public class BusquedaController {
     public void initialize() {
         // Llena el comboTipo con opciones
         comboTipo.getItems().addAll("casa", "apartamento", "local");
+        comboEstado.getItems().addAll("nueva", "usada", "Obra Gris", "Obra Negra");
     }
 
     @FXML
     private void buscarAvanzada(ActionEvent event) {
         String tipo = comboTipo.getValue();
+        String estado = comboEstado.getValue();
         Integer estratoMin = parseInteger(txtEstratoMin.getText());
         Integer estratoMax = parseInteger(txtEstratoMax.getText());
         Double areaMin = parseDouble(txtAreaMin.getText());
@@ -39,7 +42,7 @@ public class BusquedaController {
         BigDecimal precioMin = parseBigDecimal(txtPrecioMin.getText());
         BigDecimal precioMax = parseBigDecimal(txtPrecioMax.getText());
 
-        List<Inmueble> resultados = inmuebleService.filtrarInmuebles(tipo, estratoMin, estratoMax,
+        List<Inmueble> resultados = inmuebleService.filtrarInmuebles(tipo, estado, estratoMin, estratoMax,
                 areaMin, areaMax, precioMin, precioMax);
 
         // Cambia a la pantalla de resultados pasando los resultados

@@ -27,6 +27,7 @@ public class VerificacionController {
 
         boolean validarRecuperacion = usuarioService.validarRecuperacion(correo, preguntaSeleccionada, respuesta);
 
+
         if(validarRecuperacion) {
             cambia.cambiarEscena(event, "/view/recuperacion.fxml");
         } else {

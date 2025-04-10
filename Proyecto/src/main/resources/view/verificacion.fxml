@@ -14,7 +14,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.RegistroController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.VerificacionController">
     <left>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
             <children>
@@ -116,7 +116,7 @@
                 </Label>
                 <ComboBox fx:id="combobox_Pregunta" editable="true" layoutX="134.0" layoutY="208.0" onAction="#comboBoxEvent" prefHeight="19.0" prefWidth="150.0" promptText="Selecciona una pregunta" style="-fx-background-color: #363432;" />
                 <PasswordField fx:id="txtRespuesta" layoutX="134.0" layoutY="260.0" style="-fx-background-color: #363432; -fx-text-fill: white;" />
-                <Button layoutX="159.0" layoutY="312.0" mnemonicParsing="false" onAction="#iniciarSesion" style="-fx-background-color: #363432;" text="Recuperar contraseña" underline="true">
+                <Button layoutX="159.0" layoutY="312.0" mnemonicParsing="false" onAction="#verificarUser" style="-fx-background-color: #363432;" text="Recuperar contraseña" underline="true">
                     <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
                             <stops>

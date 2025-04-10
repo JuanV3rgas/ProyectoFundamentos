@@ -1,8 +1,10 @@
 package com.fundamentos.proyecto.controller;
 
 import com.fundamentos.proyecto.dao.UsuarioDAO;
+import com.fundamentos.proyecto.model.Usuario;
 import com.fundamentos.proyecto.services.UsuarioService;
 import com.fundamentos.proyecto.util.CambiaEscenas;
+import com.fundamentos.proyecto.util.UserSession;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -25,6 +27,18 @@ public class RecuperacionController {
 
         boolean cambiarContra = usuarioService.cambiarContrasena(correo, contrasena);
         if(cambiarContra) {
+            Usuario usuarioActualizado = usuarioService.RegistroSession(correo);
+            UserSession.createSession(
+                    usuarioActualizado.getId(),
+                    usuarioActualizado.getNombre(),
+                    usuarioActualizado.getApellido(),
+                    usuarioActualizado.getCedula(),
+                    usuarioActualizado.getCorreo(),
+                    usuarioActualizado.getContrasena(),
+                    usuarioActualizado.getPregunta_seguridad(),
+                    usuarioActualizado.getRespuesta_pregunta_seguridad(),
+                    usuarioActualizado.getNumero_telefonico()
+            );
             mostrarAlerta(Alert.AlertType.INFORMATION, "Registro exitoso");
             cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
         }

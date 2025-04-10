@@ -1,7 +1,10 @@
 package com.fundamentos.proyecto.controller;
 
 import com.fundamentos.proyecto.dao.UsuarioDAO;
+import com.fundamentos.proyecto.model.Usuario;
+import com.fundamentos.proyecto.services.UsuarioService;
 import com.fundamentos.proyecto.util.CambiaEscenas;
+import com.fundamentos.proyecto.util.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -46,12 +49,24 @@ public class RegistroController {
         String preguntaSeleccionada = combobox_Pregunta.getValue();
         String celular = txtCelular.getText();
 
-        boolean registro = UsuarioDAO.crearUsuario(txtNombre.getText(), txtApellido.getText(),
+        boolean registro = UsuarioService.registrarUsuario(txtNombre.getText(), txtApellido.getText(),
                 txtCedula.getText(), txtCorreo.getText(), txtContrasena.getText(),
                 preguntaSeleccionada, txtRespuesta.getText(), txtCelular.getText());
 
         if(registro) {
             mostrarAlerta(Alert.AlertType.INFORMATION, "Registro exitoso");
+            Usuario usuarioRegistrado = UsuarioService.RegistroSession(txtCorreo.getText());
+            UserSession.createSession(
+                    usuarioRegistrado.getId(),
+                    usuarioRegistrado.getNombre(),
+                    usuarioRegistrado.getApellido(),
+                    usuarioRegistrado.getCedula(),
+                    usuarioRegistrado.getCorreo(),
+                    usuarioRegistrado.getContrasena(),
+                    usuarioRegistrado.getPregunta_seguridad(),
+                    usuarioRegistrado.getRespuesta_pregunta_seguridad(),
+                    usuarioRegistrado.getNumero_telefonico()
+            );
             cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
         } else {
             mostrarAlerta(Alert.AlertType.ERROR, "Datos incorrectos, inténtelo nuevamente");

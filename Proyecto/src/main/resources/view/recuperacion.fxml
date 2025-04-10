@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.RecuperacionController">
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="323.0" style="-fx-background-color: #3B3C40;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutX="24.0" layoutY="63.0" prefHeight="42.0" prefWidth="271.0" text="Cambia tu contraseña" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat Regular" size="21.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.945989727973938" green="0.4399999976158142" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8531669974327087" green="0.9684210419654846" blue="0.10401559621095657" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Label alignment="CENTER" layoutX="-33.0" layoutY="168.0" prefHeight="42.0" prefWidth="168.0" text="Correo" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.945989727973938" green="0.4399999976158142" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8531669974327087" green="0.9684210419654846" blue="0.10401559621095657" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <TextField fx:id="txtCorreo" layoutX="135.0" layoutY="177.0" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+                <Label alignment="CENTER" layoutX="-18.0" layoutY="210.0" prefHeight="42.0" prefWidth="168.0" text="Nueva contraseña" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.945989727973938" green="0.4399999976158142" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8531669974327087" green="0.9684210419654846" blue="0.10401559621095657" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <PasswordField fx:id="txtNuevaContrasena" layoutX="135.0" layoutY="219.0" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+                <Button layoutX="224.0" layoutY="279.0" mnemonicParsing="false" onAction="#cambiarContrasena" style="-fx-background-color: #363432;" text="Cambiar" underline="true">
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Button>
+            </children>
+        </AnchorPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutX="17.0" layoutY="207.0" prefHeight="42.0" prefWidth="168.0" text="BitHouse" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat-Bold" size="33.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <ImageView fitHeight="111.0" fitWidth="130.0" layoutX="38.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../fotos/Logo-BitHouse.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>

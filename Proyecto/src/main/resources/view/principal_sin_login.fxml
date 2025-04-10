@@ -19,7 +19,7 @@
                         <Image url="@../fotos/Logo-BitHouse.png" />
                     </image>
                 </ImageView>
-                <Button layoutX="357.0" layoutY="41.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="156.0" style="-fx-background-color: #363432;" text="Busqueda">
+                <Button layoutX="357.0" layoutY="41.0" mnemonicParsing="false" onAction="#busqueda" prefHeight="62.0" prefWidth="156.0" style="-fx-background-color: #363432;" text="Busqueda">
                     <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
                             <stops>

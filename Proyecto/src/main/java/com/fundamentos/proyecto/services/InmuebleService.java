@@ -22,6 +22,7 @@ public class InmuebleService {
     }
 
     public List<Inmueble> filtrarInmuebles(String tipo,
+                                           String estado,
                                            Integer estratoMin,
                                            Integer estratoMax,
                                            Double areaMin,

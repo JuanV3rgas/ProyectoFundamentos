@@ -11,7 +11,7 @@ public class PrincipalSinLoginController {
     CambiaEscenas cambia = new CambiaEscenas();
 
     @FXML private void busqueda(ActionEvent event) {
-
+        cambia.cambiarEscena(event, "/view/busqueda.fxml");
     }
 
 

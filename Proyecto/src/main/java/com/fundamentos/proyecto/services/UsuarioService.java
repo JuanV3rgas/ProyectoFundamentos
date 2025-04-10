@@ -14,11 +14,19 @@ public class UsuarioService {
     }
 
 
-    public boolean registrarUsuario(String nombre, String apellido, String cedula,
-                                    String correo, String contrasena,
-                                    String pregunta, String respuesta,
-                                    String celular) {
+    public static boolean registrarUsuario(String nombre, String apellido, String cedula,
+                                           String correo, String contrasena,
+                                           String pregunta, String respuesta,
+                                           String celular) {
         return UsuarioDAO.crearUsuario(nombre, apellido, cedula, correo, contrasena, pregunta, respuesta, celular);
+    }
+
+    public static Usuario RegistroSession(String correo) {
+        if (correo == null || correo.trim().isEmpty()) {
+            return null; // O lanzar una excepción de validación
+        }
+
+        return UsuarioDAO.obtenerUsuarioCorreo(correo);
     }
 
 

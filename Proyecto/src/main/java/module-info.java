@@ -9,9 +9,7 @@ module com.fundamentos.proyecto {
     opens com.fundamentos.proyecto.controller to javafx.fxml;
     opens com.fundamentos.proyecto.app to javafx.fxml;
     opens com.fundamentos.proyecto.util to javafx.fxml;
-
+    opens com.fundamentos.proyecto.model to javafx.base;
     exports com.fundamentos.proyecto.app;
     exports com.fundamentos.proyecto.controller;
-
-
 }
