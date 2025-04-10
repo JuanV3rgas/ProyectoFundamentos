@@ -21,7 +21,9 @@ public class ResultadosController {
     @FXML private TableColumn<Inmueble, Double> colArea;
     @FXML private TableColumn<Inmueble, String> colDireccion;
     @FXML private TableColumn<Inmueble, BigDecimal> colPrecio;
-    @FXML private TableColumn<Inmueble, byte[]> colImagen; // Nueva columna para la imagen
+    @FXML private TableColumn<Inmueble, byte[]> colImagen;
+    @FXML private TableColumn<Inmueble, String> colHabitaciones;
+    @FXML private TableColumn<Inmueble, String> colBanos;
 
     @FXML
     public void initialize() {
@@ -30,9 +32,9 @@ public class ResultadosController {
         colArea.setCellValueFactory(new PropertyValueFactory<>("area"));
         colDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-
-
         colImagen.setCellValueFactory(new PropertyValueFactory<>("imagen1"));
+        colHabitaciones.setCellValueFactory(new PropertyValueFactory<>("habitaciones"));
+        colBanos.setCellValueFactory(new PropertyValueFactory<>("banos"));
         colImagen.setCellFactory(column -> new TableCell<Inmueble, byte[]>() {
             private final ImageView imageView = new ImageView();
 

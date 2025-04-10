@@ -92,11 +92,11 @@ public class InmuebleDAO {
             parametros.add(precioMax);
         }
         if (habitaciones != null) {
-            sql.append("AND habitaciones <= ? ");
+            sql.append("AND habitaciones = ? ");
             parametros.add(habitaciones);
         }
         if (banos != null) {
-            sql.append("AND banos >= ? ");
+            sql.append("AND banos = ? ");
             // Corrección: se agrega 'banos' en lugar de 'habitaciones'
             parametros.add(banos);
         }
@@ -118,8 +118,6 @@ public class InmuebleDAO {
                     inm.setBanos(rs.getInt("banos"));
                     inm.setArea(rs.getDouble("area"));
                     inm.setPrecio(rs.getBigDecimal("precio"));
-                    // Asignar imagen u otros campos si lo necesitas.
-
                     lista.add(inm);
                 }
             }
