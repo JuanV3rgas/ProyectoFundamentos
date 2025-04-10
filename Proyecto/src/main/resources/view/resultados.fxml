@@ -9,41 +9,42 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="689.0" style="-fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.ResultadosController">
+<AnchorPane prefHeight="469.0" prefWidth="784.0" style="-fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.ResultadosController">
     <children>
-        <TableView fx:id="tablaInmuebles" layoutX="75.0" layoutY="93.0" prefHeight="360" prefWidth="560">
+        <TableView fx:id="tablaInmuebles" layoutX="2.0" layoutY="60.0" prefHeight="409.0" prefWidth="778.0">
             <columns>
-                <TableColumn id="tablaInmuebles" fx:id="colTipo" prefWidth="100" text="Tipo" />
+                <TableColumn fx:id="colTipo" prefWidth="100" text="Tipo" />
                 <TableColumn fx:id="colEstrato" prefWidth="80" text="Estrato" />
                 <TableColumn fx:id="colArea" prefWidth="80" text="Área" />
                 <TableColumn fx:id="colDireccion" prefWidth="200" text="Dirección" />
                 <TableColumn fx:id="colPrecio" prefWidth="100" text="Precio" />
+                <TableColumn fx:id="colImagen" prefWidth="120" text="Imagen" />
             </columns>
         </TableView>
-      <AnchorPane prefHeight="60.0" prefWidth="710.0" style="-fx-background-color: #3B3C40;">
-         <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="322.0" text="Resultados de busqueda" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Montserrat Regular" size="21.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.945989727973938" green="0.4399999976158142" blue="1.0" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8531669974327087" green="0.9684210419654846" blue="0.10401559621095657" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-         </children>
-      </AnchorPane>
+        <AnchorPane prefHeight="60.0" prefWidth="784.0" style="-fx-background-color: #3B3C40;">
+            <children>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="322.0" text="Resultados de búsqueda" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Montserrat Regular" size="21.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.945989727973938" green="0.4399999976158142" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8531669974327087" green="0.9684210419654846" blue="0.10401559621095657" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>

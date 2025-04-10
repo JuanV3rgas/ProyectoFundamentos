@@ -12,7 +12,7 @@ public class Inmueble {
     private int banos;
     private double area;
     private BigDecimal precio;
-    // Para imágenes, puedes agregar:
+    // Agregamos para imágenes:
     private byte[] imagen1;
     private byte[] imagen2;
     private byte[] imagen3;
