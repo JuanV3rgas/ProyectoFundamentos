@@ -92,7 +92,7 @@ public class CrearPublicacionController {
 
 
         int idInmueble = InmuebleDAO.insertarInmueble(tipo, estado, direccion, estrato, habitaciones,
-                banos, precio, imagen1, imagen2, imagen3, area);
+                banos, precio, imagen1,area);
         
         if (idInmueble > 0) {
 

@@ -14,8 +14,6 @@ public class Inmueble {
     private BigDecimal precio;
     // Agregamos para imágenes:
     private byte[] imagen1;
-    private byte[] imagen2;
-    private byte[] imagen3;
 
     // Getters y setters
     public int getId() { return id; }
@@ -48,9 +46,4 @@ public class Inmueble {
     public byte[] getImagen1() { return imagen1; }
     public void setImagen1(byte[] imagen1) { this.imagen1 = imagen1; }
 
-    public byte[] getImagen2() { return imagen2; }
-    public void setImagen2(byte[] imagen2) { this.imagen2 = imagen2; }
-
-    public byte[] getImagen3() { return imagen3; }
-    public void setImagen3(byte[] imagen3) { this.imagen3 = imagen3; }
 }

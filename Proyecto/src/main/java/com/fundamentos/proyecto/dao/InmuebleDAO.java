@@ -11,13 +11,13 @@ public class InmuebleDAO {
 
     public static int insertarInmueble(String tipo, String estado, String direccion, int estrato,
                                        int habitaciones, int banos, BigDecimal precio,
-                                       byte[] imagen1, byte[] imagen2, byte[] imagen3, double area) {
+                                       byte[] imagen1, double area) {
         // Nota: El orden de los parámetros es:
         // 1: tipo, 2: estado, 3: direccion, 4: estrato,
         // 5: habitaciones, 6: banos, 7: precio, 8: imagen1, 9: imagen2, 10: imagen3, 11: area
         String sql = "INSERT INTO INMUEBLE(tipo, estado, direccion, estrato, "
-                + "habitaciones, banos, precio, imagen, imagen2, imagen3, area) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "habitaciones, banos, precio, imagen, area) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -29,8 +29,6 @@ public class InmuebleDAO {
             ps.setInt(6, banos);
             ps.setBigDecimal(7, precio);
             ps.setBytes(8, imagen1);
-            ps.setBytes(9, imagen2);
-            ps.setBytes(10, imagen3);
             ps.setDouble(11, area);
 
             int filas = ps.executeUpdate();

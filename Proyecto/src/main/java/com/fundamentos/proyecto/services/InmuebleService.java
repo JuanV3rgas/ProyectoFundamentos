@@ -18,7 +18,7 @@ public class InmuebleService {
                                  int habitaciones, int banos, double area, BigDecimal precio,
                                  byte[] imagen1, byte[] imagen2, byte[] imagen3) {
         return inmuebleDAO.insertarInmueble(tipo, estado, direccion, estrato, habitaciones,
-                banos, precio, imagen1, imagen2, imagen3, area);
+                banos, precio, imagen1, area);
     }
 
     public List<Inmueble> filtrarInmuebles(String tipo,
