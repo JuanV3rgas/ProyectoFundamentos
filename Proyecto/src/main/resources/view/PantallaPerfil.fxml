@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.PerfilController">
+
+    <!-- Encabezado -->
+    <AnchorPane layoutY="0.0" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: #0D0D0D;">
+        <children>
+            <Label layoutX="30" layoutY="20" text="Perfil del Usuario">
+                <font>
+                    <Font name="System Bold" size="28" />
+                </font>
+            <textFill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="0.007532956685499058">
+                        <color>
+                           <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+            </Label>
+        </children>
+    </AnchorPane>
+
+    <!-- Contenido -->
+    <HBox layoutX="50.0" layoutY="100.0" spacing="50.0">
+        <children>
+            <!-- Columna izquierda: Foto y nombre -->
+            <VBox alignment="CENTER" spacing="15">
+                <children>
+                    <ImageView fitHeight="160" fitWidth="160" preserveRatio="true">
+                        <image>
+                            <Image url="@../fotos/user-128.png" />
+                        </image>
+                    </ImageView>
+
+                    <Label text="Juan Pérez">
+                        <font>
+                            <Font name="Montserrat Bold" size="22" />
+                        </font>
+                        <textFill>
+                            <LinearGradient endX="1.0" endY="1.0">
+                                <stops>
+                                    <Stop color="#f170ff" />
+                                    <Stop color="#daf71b" offset="1.0" />
+                                </stops>
+                            </LinearGradient>
+                        </textFill>
+                    </Label>
+
+                    <Label style="-fx-font-size: 14px;" text="Propietario de inmuebles">
+                  <textFill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.007532956685499058">
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill></Label>
+                </children>
+            </VBox>
+
+            <!-- Columna derecha: Información y acciones -->
+            <VBox alignment="TOP_LEFT" spacing="20">
+                <children>
+                    <!-- Datos personales -->
+                    <Label style="-fx-font-size: 16px;" text="Correo: juan.perez@email.com">
+                  <textFill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.007532956685499058">
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill></Label>
+                    <Label style="-fx-font-size: 16px;" text="Teléfono: +57 312 345 6789">
+                  <textFill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.007532956685499058">
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill></Label>
+                    <Label style="-fx-font-size: 16px;" text="Ubicación: Medellín, Colombia">
+                  <textFill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.007532956685499058">
+                              <color>
+                                 <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill></Label>
+
+                    <!-- Métricas -->
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <children>
+                            <VBox alignment="CENTER">
+                                <Label style="-fx-font-size: 20px;" text="5">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                                <Label style="-fx-font-size: 14px;" text="Propiedades">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Label style="-fx-font-size: 20px;" text="12">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                                <Label style="-fx-font-size: 14px;" text="Reservas">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Label style="-fx-font-size: 20px;" text="4.8 ★">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                                <Label style="-fx-font-size: 14px;" text="Calificación">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.007532956685499058">
+                                       <color>
+                                          <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill></Label>
+                            </VBox>
+                        </children>
+                    </HBox>
+
+                    <!-- Botones -->
+                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 15 0 0 0;">
+                        <children>
+                            <Button prefWidth="140" style="-fx-background-color: #363432;" text="Editar Perfil">
+                                <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                        <stops>
+                                            <Stop color="#f170ff" />
+                                            <Stop color="#daf71b" offset="1.0" />
+                                        </stops>
+                                    </LinearGradient>
+                                </textFill>
+                            </Button>
+
+                            <Button prefWidth="180" style="-fx-background-color: #363432;" text="Ver Mis Propiedades">
+                                <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                        <stops>
+                                            <Stop color="#f170ff" />
+                                            <Stop color="#daf71b" offset="1.0" />
+                                        </stops>
+                                    </LinearGradient>
+                                </textFill>
+                            </Button>
+
+                            <Button prefWidth="140" style="-fx-background-color: #363432;" text="Cerrar Sesión">
+                                <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                        <stops>
+                                            <Stop color="#f170ff" />
+                                            <Stop color="#daf71b" offset="1.0" />
+                                        </stops>
+                                    </LinearGradient>
+                                </textFill>
+                            </Button>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+    </HBox>
+</AnchorPane>
