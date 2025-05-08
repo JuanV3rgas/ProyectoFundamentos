@@ -1,0 +1,31 @@
+name: Java CI (Maven)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Traer tu código
+      - uses: actions/checkout@v3
+
+      # 2. Instalar JDK (ajusta la versión a la que uses en tu pom.xml)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: Temurin
+          java-version: '17'
+          cache: maven
+
+      # 3. Construir y empaquetar tu proyecto
+      - name: Build with Maven
+        run: mvn -B clean package
+
+      # 4. Ejecutar tests
+      - name: Run tests
+        run: mvn test
