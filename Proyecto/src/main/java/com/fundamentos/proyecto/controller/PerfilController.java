@@ -22,7 +22,7 @@ public class PerfilController {
         if (usuario != null) {
             nombreLabel.setText(usuario.getNombre() + " " + usuario.getApellido());
             correoLabel.setText(usuario.getCorreo());
-            telefonoLabel.setText(usuario.getCedula()); // o getCedula si es lo que tienes
+            telefonoLabel.setText(String.valueOf(usuario.getCedula()));
         }
     }
 
