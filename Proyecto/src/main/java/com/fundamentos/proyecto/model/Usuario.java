@@ -4,7 +4,7 @@ public class Usuario {
     private int id;
     private String nombre;
     private String apellido;
-    private int cedula;
+    private String cedula;
     private String correo;
     private String contrasena;
     private String pregunta_seguridad;
@@ -12,7 +12,7 @@ public class Usuario {
     private String numero_telefonico;
 
 
-    public Usuario(int id, String nombre, String apellido, int cedula, String correo, String contrasena, String pregunta_seguridad, String respuesta_pregunta_seguridad, String numero_telefonico) {
+    public Usuario(int id, String nombre, String apellido, String cedula, String correo, String contrasena, String pregunta_seguridad, String respuesta_pregunta_seguridad, String numero_telefonico) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -49,11 +49,11 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -96,4 +96,6 @@ public class Usuario {
     public void setNumero_telefonico(String numero_telefonico) {
         this.numero_telefonico = numero_telefonico;
     }
+
+
 }
