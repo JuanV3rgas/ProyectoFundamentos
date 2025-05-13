@@ -7,9 +7,9 @@ import javafx.scene.control.Label;
 
 public class PerfilController {
 
-    @FXML private Label nombreLabel;
-    @FXML private Label correoLabel;
-    @FXML private Label telefonoLabel;
+    @FXML public Label nombreLabel;
+    @FXML public Label correoLabel;
+    @FXML public Label telefonoLabel;
 
     private Usuario usuario;
 
