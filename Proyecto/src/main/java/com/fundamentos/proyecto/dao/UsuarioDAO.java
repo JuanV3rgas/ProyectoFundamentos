@@ -257,5 +257,35 @@ public class UsuarioDAO {
         }
         return null;
     }
+    public static Usuario obtenerUsuarioPorId(int id) {
+        Usuario usuario = null;
+        String sql = "SELECT * FROM USUARIO WHERE ID = ?";
 
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int idU = rs.getInt("ID");
+                String nombre = rs.getString("Nombre");
+                String apellido = rs.getString("Apellido");
+                int cedula = rs.getInt("Cedula");
+                String correo = rs.getString("Correo");
+                String contrasenaU = rs.getString("Contrasena");
+                String preguntaSeguridad = rs.getString("pregunta_seguridad");
+                String respuesta = rs.getString("respuesta_pregunta_seguridad");
+                String celular = rs.getString("numero_telefonico");
+
+                return new Usuario(id, nombre, apellido, cedula, correo, contrasenaU, preguntaSeguridad, respuesta, celular);
+            }
+
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return usuario;
+    }
 }
