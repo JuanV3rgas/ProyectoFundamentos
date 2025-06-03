@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.ContactoController">
     <children>
 
         <Label layoutX="37.0" layoutY="154.0" text="Mensaje:">
@@ -57,7 +57,7 @@
                 </Label>
             </children>
         </AnchorPane>
-      <Button layoutX="246.0" layoutY="282.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" style="-fx-background-color: #363432;" text="Enviar">
+      <Button fx:id="enviarButton" layoutX="246.0" layoutY="282.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="87.0" style="-fx-background-color: #363432;" text="Enviar">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -75,8 +75,8 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <TextArea layoutX="112.0" layoutY="154.0" prefHeight="92.0" prefWidth="355.0" style="-fx-background-color: #363432;" />
-      <Label layoutX="37.0" layoutY="70.0" prefHeight="25.0" prefWidth="128.0" text="Enviar mensaje a:">
+      <TextArea fx:id="mensajeTextArea" layoutX="112.0" layoutY="154.0" prefHeight="92.0" prefWidth="355.0" style="-fx-background-color: #363432;" />
+      <Label fx:id="labelNombreReceptor" layoutX="37.0" layoutY="70.0" prefHeight="25.0" prefWidth="128.0" text="Enviar mensaje a:">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
