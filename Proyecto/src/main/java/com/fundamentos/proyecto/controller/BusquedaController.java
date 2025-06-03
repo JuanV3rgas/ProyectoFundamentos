@@ -1,7 +1,9 @@
 package com.fundamentos.proyecto.controller;
 
 import com.fundamentos.proyecto.model.Inmueble;
+import com.fundamentos.proyecto.model.PublicacionInmueble;
 import com.fundamentos.proyecto.services.InmuebleService;
+import com.fundamentos.proyecto.services.PublicacionInmuebleService;
 import com.fundamentos.proyecto.util.CambiaEscenas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,8 +28,9 @@ public class BusquedaController {
     @FXML private TextField txtBanos;
 
 
-    private InmuebleService inmuebleService = new InmuebleService();
     private CambiaEscenas cambia = new CambiaEscenas();
+
+    private PublicacionInmuebleService publicacionInmuebleService = new PublicacionInmuebleService();
 
     @FXML
     public void initialize() {
@@ -49,10 +52,11 @@ public class BusquedaController {
         Integer habitaciones = parseInteger(txtHabitaciones.getText());
         Integer banos = parseInteger(txtBanos.getText());
 
-        List<Inmueble> resultados = inmuebleService.filtrarInmuebles(tipo, estado, estratoMin, estratoMax,
-                areaMin, areaMax, precioMin, precioMax, habitaciones, banos);
 
-        // Cambia a la pantalla de resultados pasando los resultados
+
+        List<PublicacionInmueble> resultados = publicacionInmuebleService.filtrarPublicacionInmuebles(
+                tipo, estado, estratoMin, estratoMax,
+                areaMin, areaMax, precioMin, precioMax, habitaciones, banos);
         cambia.cambiarEscenaConResultados("/view/resultados.fxml", resultados);
     }
 

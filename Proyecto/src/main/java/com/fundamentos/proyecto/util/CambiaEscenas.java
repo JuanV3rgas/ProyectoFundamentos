@@ -1,7 +1,7 @@
 package com.fundamentos.proyecto.util;
 
 import com.fundamentos.proyecto.controller.ResultadosController;
-import com.fundamentos.proyecto.model.Inmueble;
+import com.fundamentos.proyecto.model.PublicacionInmueble;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,12 +23,11 @@ public class CambiaEscenas {
         }
     }
 
-    public void cambiarEscenaConResultados(String rutaFxml, List<Inmueble> resultados) {
+    public void cambiarEscenaConResultados(String rutaFxml, List<PublicacionInmueble> resultados) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFxml));
             Parent root = loader.load();
 
-            // Obtener el controlador de la pantalla de resultados y pasarle la lista
             ResultadosController controller = loader.getController();
             controller.setResultados(resultados);
 

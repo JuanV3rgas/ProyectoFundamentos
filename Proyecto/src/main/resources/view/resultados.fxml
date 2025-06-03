@@ -21,6 +21,7 @@
                 <TableColumn fx:id="colImagen" prefWidth="81.0" text="Imagen" />
                 <TableColumn fx:id="colHabitaciones" minWidth="0.0" prefWidth="90.0" text="Habitaciones" />
                 <TableColumn fx:id="colBanos" prefWidth="138.0" text="Baños" />
+                <TableColumn fx:id="colDetalles" prefWidth="100.0" text="Detalles"/>
             </columns>
         </TableView>
         <AnchorPane prefHeight="60.0" prefWidth="784.0" style="-fx-background-color: #3B3C40;">
