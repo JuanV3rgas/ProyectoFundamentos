@@ -45,4 +45,10 @@ public class UsuarioService {
         }
         return UsuarioDAO.validarRecuperacion(correo, pregunta, respuesta);
     }
+    public Usuario obtenerUsuarioPorId(int id) {
+        if (id <= 0) {
+            return null;
+        }
+        return UsuarioDAO.obtenerUsuarioPorId(id);
+    }
 }
