@@ -48,7 +48,16 @@ public class VerificacionControllerTest {
         assertFalse(resultado, "No debería pasar la verificación si la respuesta es incorrecta");
     }
 
+    @Test
+    void testVerificacionConCorreoInvalido() {
+        String correo = "noexiste@gmail.com";
+        String pregunta = "nombre de su primera mascota";
+        String respuesta = "loquesea";
 
+        boolean resultado = usuarioService.validarRecuperacion(correo, pregunta, respuesta);
+
+        assertFalse(resultado, "No debería pasar si el correo no existe");
+    }
 
 
 }
