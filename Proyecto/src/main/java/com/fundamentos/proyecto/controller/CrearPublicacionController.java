@@ -29,8 +29,6 @@ public class CrearPublicacionController {
 
     // Variables para almacenar las rutas de las imágenes
     private byte[] imagen1;
-    private byte[] imagen2;
-    private byte[] imagen3;
 
     private CambiaEscenas cambia = new CambiaEscenas();
 
@@ -43,27 +41,13 @@ public class CrearPublicacionController {
     }
 
     @FXML
-    private void escogeFoto1(ActionEvent event) {
+    private void escogeFoto(ActionEvent event) {
         imagen1 = seleccionarImagen().getBytes();
     }
 
-    @FXML
-    private void escogeFoto2(ActionEvent event) {
-        imagen2 = seleccionarImagen().getBytes();
-    }
-
-    @FXML
-    private void escogeFoto3(ActionEvent event) {
-        imagen3 = seleccionarImagen().getBytes();
-    }
-
-    /**
-     * Abre un FileChooser para seleccionar una imagen y retorna la ruta seleccionada
-     */
     private String seleccionarImagen() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleccionar imagen");
-        // Extensiones posibles
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Imágenes", "*.png", "*.jpg", "*.jpeg")
         );
@@ -111,4 +95,26 @@ public class CrearPublicacionController {
             System.out.println("Error al crear el inmueble");
         }
     }
+
+    @FXML
+    private void comboBoxEvent(ActionEvent event) {
+
+        Object e = event.getSource();
+        if(e == comboEstado) {
+            System.out.println(comboEstado.getSelectionModel().getSelectedItem());
+        }
+        if(e == comboEstrato) {
+            System.out.println(comboEstrato.getSelectionModel().getSelectedItem());
+        }
+        if(e == comboTipo) {
+            System.out.println(comboTipo.getSelectionModel().getSelectedItem());
+        }
+
+    }
+
+    @FXML
+    private void back(ActionEvent event) {
+        cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
+    }
+
 }

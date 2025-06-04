@@ -2,8 +2,10 @@ package com.fundamentos.proyecto.controller;
 
 import com.fundamentos.proyecto.model.Inmueble;
 import com.fundamentos.proyecto.model.Publicacion;
+import com.fundamentos.proyecto.util.CambiaEscenas;
 import com.fundamentos.proyecto.util.UserSession;
 import com.fundamentos.proyecto.util.DBConnection;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,8 +28,8 @@ public class PublicacionController {
     @FXML private Label habitacionesLabel;
     @FXML private Label banosLabel;
     @FXML private ImageView imageView1;
-    @FXML private Label estadoPublicacionLabel;
-    @FXML private Label fechaLabel;
+
+    private CambiaEscenas cambia = new CambiaEscenas();
 
     // IDs necesarios para el chat
     private int idPublicacion;
@@ -47,8 +49,6 @@ public class PublicacionController {
         } else {
             imageView1.setImage(null);
         }
-        estadoPublicacionLabel.setText(publicacion.getEstado());
-        fechaLabel.setText(publicacion.getFechaPublicacion() != null ? publicacion.getFechaPublicacion().toString() : "");
         this.idPublicacion = publicacion.getId();
         this.dueñoId = publicacion.getIdUsuario();
     }
@@ -85,4 +85,10 @@ public class PublicacionController {
             return null;
         }
     }
+
+    @FXML
+    private void back(ActionEvent event) {
+        cambia.cambiarEscena(event, "/view/resultados.fxml");
+    }
+
 }

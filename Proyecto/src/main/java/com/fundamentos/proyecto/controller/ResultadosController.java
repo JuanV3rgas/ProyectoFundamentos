@@ -1,10 +1,12 @@
 package com.fundamentos.proyecto.controller;
 
 import com.fundamentos.proyecto.model.PublicacionInmueble;
+import com.fundamentos.proyecto.util.CambiaEscenas;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +31,8 @@ public class ResultadosController {
     @FXML private TableColumn<PublicacionInmueble, Integer> colHabitaciones;
     @FXML private TableColumn<PublicacionInmueble, Integer> colBanos;
     @FXML private TableColumn<PublicacionInmueble, Void> colDetalles;
+
+    private CambiaEscenas cambia = new CambiaEscenas();
 
     @FXML
     public void initialize() {
@@ -77,7 +81,7 @@ public class ResultadosController {
                     {
                         btn.setOnAction((event) -> {
                             PublicacionInmueble pubIm = getTableView().getItems().get(getIndex());
-                            mostrarVentanaDetalles(pubIm);
+                            mostrarVentanaDetalles(pubIm, event);
                         });
                         btn.setStyle("-fx-background-color: #363432; -fx-text-fill: #fff176; -fx-font-size: 12px;");
                     }
@@ -93,13 +97,15 @@ public class ResultadosController {
         colDetalles.setCellFactory(cellFactory);
     }
 
-    private void mostrarVentanaDetalles(PublicacionInmueble publicacionInmueble) {
+    private void mostrarVentanaDetalles(PublicacionInmueble publicacionInmueble, javafx.event.ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/publicacion.fxml"));
             Parent root = loader.load();
             PublicacionController controller = loader.getController();
             controller.setData(publicacionInmueble.getInmueble(), publicacionInmueble.getPublicacion());
-            Stage stage = new Stage();
+
+            // Cambia la escena en el stage actual
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Detalle de Inmueble");
             stage.show();
@@ -107,4 +113,10 @@ public class ResultadosController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void back(ActionEvent event) {
+        cambia.cambiarEscena(event, "/view/busqueda.fxml");
+    }
+
 }

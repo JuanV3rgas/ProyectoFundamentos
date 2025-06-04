@@ -16,16 +16,26 @@ import java.util.List;
 
 public class BusquedaController {
 
-    @FXML private ComboBox<String> comboTipo;
-    @FXML private ComboBox<String> comboEstado;
-    @FXML private TextField txtEstratoMin;
-    @FXML private TextField txtEstratoMax;
-    @FXML private TextField txtAreaMin;
-    @FXML private TextField txtAreaMax;
-    @FXML private TextField txtPrecioMin;
-    @FXML private TextField txtPrecioMax;
-    @FXML private TextField txtHabitaciones;
-    @FXML private TextField txtBanos;
+    @FXML
+    private ComboBox<String> comboTipo;
+    @FXML
+    private ComboBox<String> comboEstado;
+    @FXML
+    private TextField txtEstratoMin;
+    @FXML
+    private TextField txtEstratoMax;
+    @FXML
+    private TextField txtAreaMin;
+    @FXML
+    private TextField txtAreaMax;
+    @FXML
+    private TextField txtPrecioMin;
+    @FXML
+    private TextField txtPrecioMax;
+    @FXML
+    private TextField txtHabitaciones;
+    @FXML
+    private TextField txtBanos;
 
 
     private CambiaEscenas cambia = new CambiaEscenas();
@@ -53,11 +63,10 @@ public class BusquedaController {
         Integer banos = parseInteger(txtBanos.getText());
 
 
-
         List<PublicacionInmueble> resultados = publicacionInmuebleService.filtrarPublicacionInmuebles(
                 tipo, estado, estratoMin, estratoMax,
                 areaMin, areaMax, precioMin, precioMax, habitaciones, banos);
-        cambia.cambiarEscenaConResultados("/view/resultados.fxml", resultados);
+        cambia.cambiarEscenaConResultados(event, "/view/resultados.fxml", resultados);
     }
 
     private Integer parseInteger(String txt) {
@@ -86,4 +95,10 @@ public class BusquedaController {
             return null;
         }
     }
+
+    @FXML
+    private void back(ActionEvent event) {
+        cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
+    }
+
 }

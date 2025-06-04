@@ -23,7 +23,7 @@ public class CambiaEscenas {
         }
     }
 
-    public void cambiarEscenaConResultados(String rutaFxml, List<PublicacionInmueble> resultados) {
+    public void cambiarEscenaConResultados(ActionEvent event, String rutaFxml, List<PublicacionInmueble> resultados) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFxml));
             Parent root = loader.load();
@@ -31,7 +31,8 @@ public class CambiaEscenas {
             ResultadosController controller = loader.getController();
             controller.setResultados(resultados);
 
-            Stage stage = new Stage();
+            // Obtener el Stage actual desde el ActionEvent
+            Stage stage = (Stage)((javafx.scene.Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {

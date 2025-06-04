@@ -20,6 +20,12 @@ public class PrincipalSinLoginController {
         cambia.cambiarEscena(event, "/view/crearPublicacion.fxml");
     }
 
+    @FXML private void Mensajes(ActionEvent event) {
+        UserSession session = UserSession.getInstance();
+        cambia.cambiarEscena(event, "/view/chat.fxml");
+    }
+
+
 
     @FXML private void MisPublicaciones(ActionEvent event) {
         cambia.cambiarEscena(event, "/view/mis_publicaciones.fxml");

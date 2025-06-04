@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -11,22 +14,9 @@
 
 <AnchorPane prefHeight="469.0" prefWidth="784.0" style="-fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.ResultadosController">
     <children>
-        <TableView fx:id="tablaInmuebles" layoutX="2.0" layoutY="60.0" prefHeight="409.0" prefWidth="778.0">
-            <columns>
-                <TableColumn fx:id="colTipo" prefWidth="100" text="Tipo" />
-                <TableColumn fx:id="colEstrato" prefWidth="80" text="Estrato" />
-                <TableColumn fx:id="colArea" prefWidth="80" text="Área" />
-                <TableColumn fx:id="colDireccion" prefWidth="130.0" text="Dirección" />
-                <TableColumn fx:id="colPrecio" prefWidth="124.0" text="Precio" />
-                <TableColumn fx:id="colImagen" prefWidth="81.0" text="Imagen" />
-                <TableColumn fx:id="colHabitaciones" minWidth="0.0" prefWidth="90.0" text="Habitaciones" />
-                <TableColumn fx:id="colBanos" prefWidth="138.0" text="Baños" />
-                <TableColumn fx:id="colDetalles" prefWidth="100.0" text="Detalles"/>
-            </columns>
-        </TableView>
-        <AnchorPane prefHeight="60.0" prefWidth="784.0" style="-fx-background-color: #3B3C40;">
+        <AnchorPane prefHeight="517.0" prefWidth="837.0" style="-fx-background-color: #3B3C40;">
             <children>
-                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="322.0" text="Resultados de búsqueda" textAlignment="CENTER" wrapText="true">
+                <Label alignment="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="42.0" prefWidth="322.0" text="Resultados de búsqueda" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font name="Montserrat Regular" size="21.0" />
                     </font>
@@ -47,7 +37,29 @@
                         </LinearGradient>
                     </textFill>
                 </Label>
+            <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="42.0" style="-fx-background-color: #363432;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/Back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             </children>
         </AnchorPane>
+        <TableView fx:id="tablaInmuebles" layoutX="2.0" layoutY="60.0" prefHeight="410.0" prefWidth="823.0" translateX="5.0">
+            <columns>
+                <TableColumn fx:id="colTipo" prefWidth="76.0" text="Tipo" />
+                <TableColumn fx:id="colEstrato" prefWidth="78.4000244140625" text="Estrato" />
+                <TableColumn fx:id="colArea" prefWidth="71.99993896484375" text="Área" />
+                <TableColumn fx:id="colDireccion" prefWidth="164.800048828125" text="Dirección" />
+                <TableColumn fx:id="colPrecio" prefWidth="82.39996337890625" text="Precio" />
+                <TableColumn fx:id="colImagen" prefWidth="94.4000244140625" text="Imagen" />
+                <TableColumn fx:id="colHabitaciones" minWidth="0.0" prefWidth="120.0" text="Habitaciones" />
+                <TableColumn fx:id="colBanos" prefWidth="60.79998779296875" text="Baños" />
+                <TableColumn fx:id="colDetalles" maxWidth="70.0" prefWidth="177.5999755859375" text="Detalles" />
+            </columns>
+        </TableView>
     </children>
 </AnchorPane>
