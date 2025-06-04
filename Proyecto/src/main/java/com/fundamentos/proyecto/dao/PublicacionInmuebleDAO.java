@@ -4,6 +4,8 @@ import com.fundamentos.proyecto.model.Publicacion;
 import com.fundamentos.proyecto.model.Inmueble;
 import com.fundamentos.proyecto.model.PublicacionInmueble;
 import com.fundamentos.proyecto.util.DBConnection;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -104,4 +106,46 @@ public class PublicacionInmuebleDAO {
         }
         return lista;
     }
+
+
+    public static List<PublicacionInmueble> obtenerPublicacionesPorUsuario(int idUsuario) {
+        List<PublicacionInmueble> lista = new ArrayList<>();
+        String sql = "SELECT p.ID as pub_id, p.ID_USUARIO, p.FECHA_PUBLICACION, p.ESTADO as pub_estado, p.ID_INMUEBLE, " +
+                "i.ID as in_id, i.TIPO, i.ESTADO as in_estado, i.DIRECCION, i.ESTRATO, i.PRECIO, i.IMAGEN, i.HABITACIONES, i.BANOS, i.AREA " +
+                "FROM PUBLICACIONES p " +
+                "JOIN INMUEBLE i ON p.ID_INMUEBLE = i.ID " +
+                "WHERE p.ID_USUARIO = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                // Crea y agrega el objeto PublicacionInmueble
+                Publicacion pub = new Publicacion(
+                        rs.getInt("pub_id"),
+                        rs.getInt("ID_USUARIO"),
+                        rs.getInt("in_id"),
+                        rs.getString("pub_estado"),
+                        rs.getDate("FECHA_PUBLICACION")
+                );
+                Inmueble in = new Inmueble();
+                in.setId(rs.getInt("in_id"));
+                in.setTipo(rs.getString("TIPO"));
+                in.setEstado(rs.getString("in_estado"));
+                in.setDireccion(rs.getString("DIRECCION"));
+                in.setEstrato(rs.getInt("ESTRATO"));
+                in.setPrecio(rs.getBigDecimal("PRECIO"));
+                in.setImagen1(rs.getBytes("IMAGEN"));
+                in.setHabitaciones(rs.getInt("HABITACIONES"));
+                in.setBanos(rs.getInt("BANOS"));
+                in.setArea(rs.getDouble("AREA"));
+                lista.add(new PublicacionInmueble(in, pub));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
+
 }

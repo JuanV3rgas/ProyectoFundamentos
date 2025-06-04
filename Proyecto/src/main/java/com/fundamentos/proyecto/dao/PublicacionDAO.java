@@ -1,7 +1,6 @@
 package com.fundamentos.proyecto.dao;
 
 import com.fundamentos.proyecto.util.DBConnection;
-
 import java.sql.*;
 
 public class PublicacionDAO {
@@ -17,6 +16,19 @@ public class PublicacionDAO {
             ps.setString(3, estado);
             ps.setInt(4, idInmueble);
 
+            int filas = ps.executeUpdate();
+            return filas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean eliminarPublicacionPorId(int idPublicacion) {
+        String sql = "DELETE FROM PUBLICACIONES WHERE ID = ?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, idPublicacion);
             int filas = ps.executeUpdate();
             return filas > 0;
         } catch (SQLException e) {

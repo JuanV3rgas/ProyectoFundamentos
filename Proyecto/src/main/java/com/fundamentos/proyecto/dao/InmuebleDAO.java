@@ -26,7 +26,6 @@ public class InmuebleDAO {
             ps.setInt(6, banos);
             ps.setBigDecimal(7, precio);
             ps.setBytes(8, imagen1);
-            // Corrección: Se usa índice 9 en lugar de 11
             ps.setDouble(9, area);
 
             int filas = ps.executeUpdate();
@@ -64,7 +63,6 @@ public class InmuebleDAO {
         }
         if (estado != null && !estado.isEmpty()) {
             sql.append("AND estado = ? ");
-            // Corrección: se agrega el parámetro 'estado' en lugar de 'tipo'
             parametros.add(estado);
         }
         if (estratoMin != null) {
@@ -97,7 +95,6 @@ public class InmuebleDAO {
         }
         if (banos != null) {
             sql.append("AND banos = ? ");
-            // Corrección: se agrega 'banos' en lugar de 'habitaciones'
             parametros.add(banos);
         }
 
@@ -126,4 +123,31 @@ public class InmuebleDAO {
         }
         return lista;
     }
+
+    public static boolean actualizarInmueble(Inmueble inmueble) {
+        String sql = "UPDATE INMUEBLE SET tipo = ?, estado = ?, direccion = ?, estrato = ?, "
+                + "habitaciones = ?, banos = ?, precio = ?, imagen = ?, area = ? "
+                + "WHERE id = ?"; // <-- Asume que la columna PK es id
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, inmueble.getTipo());
+            ps.setString(2, inmueble.getEstado());
+            ps.setString(3, inmueble.getDireccion());
+            ps.setInt(4, inmueble.getEstrato());
+            ps.setInt(5, inmueble.getHabitaciones());
+            ps.setInt(6, inmueble.getBanos());
+            ps.setBigDecimal(7, inmueble.getPrecio());
+            ps.setBytes(8, inmueble.getImagen1()); // Asegúrate de que imagen1 es byte[]
+            ps.setDouble(9, inmueble.getArea());
+            ps.setInt(10, inmueble.getId()); // El ID del inmueble que quieres actualizar
+
+            int filas = ps.executeUpdate();
+            return filas > 0; // true si se actualizó, false si no
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

@@ -6,12 +6,15 @@ import com.fundamentos.proyecto.util.CambiaEscenas;
 import com.fundamentos.proyecto.util.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.sql.Date;
 
@@ -42,10 +45,10 @@ public class CrearPublicacionController {
 
     @FXML
     private void escogeFoto(ActionEvent event) {
-        imagen1 = seleccionarImagen().getBytes();
+        imagen1 = seleccionarImagen();
     }
 
-    private String seleccionarImagen() {
+    private byte[] seleccionarImagen() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleccionar imagen");
         fileChooser.getExtensionFilters().addAll(
@@ -53,7 +56,11 @@ public class CrearPublicacionController {
         );
         File archivo = fileChooser.showOpenDialog(null); // O el Stage actual
         if (archivo != null) {
-            return archivo.getAbsolutePath();
+            try {
+                return Files.readAllBytes(archivo.toPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -84,15 +91,13 @@ public class CrearPublicacionController {
             boolean publicada = PublicacionDAO.insertarPublicacion(idUsuario, fecha, "publicada", idInmueble);
 
             if (publicada) {
-                // Navegar o mostrar mensaje
-                System.out.println("Publicación creada exitosamente");
-                // Cambiar de escena si lo deseas
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Publicacion creada exitosamente");
                 cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
             } else {
-                System.out.println("Error al crear la publicación");
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Error al crear la publicación");
             }
         } else {
-            System.out.println("Error al crear el inmueble");
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Error al crear el inmueble");
         }
     }
 
@@ -117,4 +122,12 @@ public class CrearPublicacionController {
         cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
     }
 
+
+    private void mostrarAlerta(Alert.AlertType tipo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 }
