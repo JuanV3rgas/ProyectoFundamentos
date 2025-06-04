@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="837.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.PrincipalSinLoginController">
+    <top>
+        <AnchorPane prefHeight="85.0" prefWidth="828.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutX="617.0" layoutY="19.0" mnemonicParsing="false" onAction="#busqueda" prefHeight="48.0" prefWidth="59.0" style="-fx-background-color: #363432;">
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="0.006729475100942127">
+                                    <color>
+                                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                </Button>
+            <Button layoutX="766.0" layoutY="19.0" mnemonicParsing="false" onAction="#Perfil" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #363432;">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/user-128.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="324.0" layoutY="19.0" mnemonicParsing="false" onAction="#Publicar" prefHeight="48.0" prefWidth="94.0" style="-fx-background-color: #363432;" text="Publicar">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="439.0" layoutY="19.0" mnemonicParsing="false" onAction="#MisPublicaciones" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #363432;" text="Mis publicaciones">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+                <ImageView fitHeight="54.0" fitWidth="52.0" layoutX="30.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../fotos/Logo-BitHouse.png" />
+                    </image>
+                </ImageView>
+            <Button layoutX="691.0" layoutY="19.0" mnemonicParsing="false" onAction="#Mensajes" prefHeight="48.0" prefWidth="46.0" style="-fx-background-color: #363432;">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/chat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+    </top>
+   <center>
+      <AnchorPane prefHeight="313.0" prefWidth="989.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="65.0" layoutY="46.0" text="ESCOGE ">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="117.0" text="ENTRE">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="184.0" text="MILES">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="246.0" text="DE">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="308.0" text="PROPIEDADES">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="429.0" fitWidth="450.0" layoutX="429.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/Login2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

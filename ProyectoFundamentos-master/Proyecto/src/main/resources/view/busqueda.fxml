@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="517.0" prefWidth="837.0" style="-fx-background-color: #3B3C40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fundamentos.proyecto.controller.BusquedaController">
+   <children>
+      <Label layoutX="146.0" layoutY="104.0" text="Tipo de vivienda:">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font></Label>
+      <ComboBox fx:id="comboTipo" layoutX="296.0" layoutY="104.0" prefWidth="150" promptText="Tipo" />
+
+      <Label layoutX="147.0" layoutY="190.0" text="Estrato Mínimo:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtEstratoMin" layoutX="296.0" layoutY="188.0" prefWidth="50" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Label layoutX="146.0" layoutY="230.0" text="Estrato Máximo:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtEstratoMax" layoutX="296.0" layoutY="228.0" prefWidth="50" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Label layoutX="146.0" layoutY="268.0" text="Área Mínima:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtAreaMin" layoutX="296.0" layoutY="268.0" prefWidth="80" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Label layoutX="146.0" layoutY="308.0" text="Área Máxima:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtAreaMax" layoutX="296.0" layoutY="308.0" prefWidth="80" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Label layoutX="146.0" layoutY="348.0" text="Precio Mínimo:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtPrecioMin" layoutX="296.0" layoutY="348.0" prefWidth="80" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Label layoutX="146.0" layoutY="388.0" text="Precio Máximo:">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <TextField fx:id="txtPrecioMax" layoutX="296.0" layoutY="388.0" prefWidth="80" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+
+      <Button layoutX="581.0" layoutY="377.0" onAction="#buscarAvanzada" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #363432;" text="Buscar" wrapText="true">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Label layoutX="469.0" layoutY="106.0" text="Habitaciones">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="txtHabitaciones" layoutX="581.0" layoutY="104.0" prefWidth="50" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+      <Label layoutX="468.0" layoutY="146.0" text="Baños">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="txtBanos" layoutX="581.0" layoutY="144.0" prefWidth="50" style="-fx-background-color: #363432; -fx-text-fill: white;" />
+      <Label layoutX="141.0" layoutY="146.0" text="Estado de vivienda">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboEstado" layoutX="296.0" layoutY="144.0" prefWidth="150" promptText="Tipo" />
+      <AnchorPane layoutY="-6.0" prefHeight="58.0" prefWidth="837.0" style="-fx-background-color: #0D0D0D;">
+         <children>
+            <Label alignment="CENTER" layoutX="257.0" layoutY="14.0" prefHeight="42.0" prefWidth="322.0" text="Busqueda avanzada" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Montserrat Regular" size="21.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9450980424880981" green="0.43921568989753723" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8549019694328308" green="0.9686274528503418" blue="0.10588235408067703" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button layoutX="6.0" layoutY="16.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="28.0" style="-fx-background-color: #363432;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/Back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
