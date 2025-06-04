@@ -32,6 +32,12 @@ public class LoginControllerTest {
         assertEquals("santi@gmail.com", usuario.getCorreo());
     }
 
+    @Test
+    void testLoginCredencialesInvalidas() {
+        Usuario usuario = usuarioService.login("noexiste@gmail.com", "incorrecto");
+
+        assertNull(usuario, "No debería devolver un usuario si las credenciales son inválidas");
+    }
 
 
 
