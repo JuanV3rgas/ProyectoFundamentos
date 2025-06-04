@@ -24,6 +24,13 @@ public class LoginControllerTest {
         assertEquals("juan@gmail.com", usuario.getCorreo());
     }
 
+    @Test
+    void testLoginSantiMartinez() {
+        Usuario usuario = usuarioService.login("santi@gmail.com", "123");
+
+        assertNotNull(usuario, "El usuario Santi Martínez debería existir");
+        assertEquals("santi@gmail.com", usuario.getCorreo());
+    }
 
 
 
