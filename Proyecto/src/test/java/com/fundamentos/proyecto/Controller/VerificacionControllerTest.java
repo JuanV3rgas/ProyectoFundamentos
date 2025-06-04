@@ -37,6 +37,17 @@ public class VerificacionControllerTest {
         assertTrue(resultado, "Santi debería pasar la verificación con sus datos correctos");
     }
 
+    @Test
+    void testVerificacionConRespuestaIncorrecta() {
+        String correo = "juan@gmail.com";
+        String pregunta = "nombre de su primera mascota";
+        String respuesta = "Firulais"; // incorrecta
+
+        boolean resultado = usuarioService.validarRecuperacion(correo, pregunta, respuesta);
+
+        assertFalse(resultado, "No debería pasar la verificación si la respuesta es incorrecta");
+    }
+
 
 
 
