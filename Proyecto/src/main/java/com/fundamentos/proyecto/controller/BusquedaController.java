@@ -46,7 +46,7 @@ public class BusquedaController {
     public void initialize() {
         // Llena el comboTipo con opciones
         comboTipo.getItems().addAll("casa", "apartamento", "local");
-        comboEstado.getItems().addAll("nueva", "usada", "obra gris", "obra negra");
+        comboEstado.getItems().addAll("nuevo", "usada", "obra gris", "obra negra");
     }
 
     @FXML
