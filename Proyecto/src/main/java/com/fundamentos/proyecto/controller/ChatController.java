@@ -22,12 +22,18 @@ import java.util.TimerTask;
 
 public class ChatController {
 
-    @FXML private VBox mensajesVBox;
-    @FXML private VBox chatsListVBox;
-    @FXML private TextField mensajeTextField;
-    @FXML private Button enviarButton;
-    @FXML private Label chatTitle;
-    @FXML private ScrollPane mensajesScrollPane;
+    @FXML
+    public VBox mensajesVBox;
+    @FXML
+    public VBox chatsListVBox;
+    @FXML
+    public TextField mensajeTextField;
+    @FXML
+    public Button enviarButton;
+    @FXML
+    public Label chatTitle;
+    @FXML
+    public ScrollPane mensajesScrollPane;
 
     private int idPublicacion;
     private int usuarioActualId;
@@ -37,7 +43,7 @@ public class ChatController {
 
     private Timer timer;
 
-    private CambiaEscenas cambia = new CambiaEscenas();
+    public CambiaEscenas cambia = new CambiaEscenas();
 
 
     public void initData(int idPublicacion, int usuarioActualId, int receptorId, Connection conexion) {
@@ -135,7 +141,7 @@ public class ChatController {
         }
     }
 
-    private void enviarMensaje() {
+    public void enviarMensaje() {
         String texto = mensajeTextField.getText();
         if (texto == null || texto.trim().isEmpty()) return;
         mensajeDAO.insertarMensaje(idPublicacion, usuarioActualId, receptorId, texto);

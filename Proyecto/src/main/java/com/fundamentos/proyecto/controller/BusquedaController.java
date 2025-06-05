@@ -17,30 +17,30 @@ import java.util.List;
 public class BusquedaController {
 
     @FXML
-    private ComboBox<String> comboTipo;
+    public ComboBox<String> comboTipo;
     @FXML
-    private ComboBox<String> comboEstado;
+    public ComboBox<String> comboEstado;
     @FXML
-    private TextField txtEstratoMin;
+    public TextField txtEstratoMin;
     @FXML
-    private TextField txtEstratoMax;
+    public TextField txtEstratoMax;
     @FXML
-    private TextField txtAreaMin;
+    public TextField txtAreaMin;
     @FXML
-    private TextField txtAreaMax;
+    public TextField txtAreaMax;
     @FXML
-    private TextField txtPrecioMin;
+    public TextField txtPrecioMin;
     @FXML
-    private TextField txtPrecioMax;
+    public TextField txtPrecioMax;
     @FXML
-    private TextField txtHabitaciones;
+    public TextField txtHabitaciones;
     @FXML
-    private TextField txtBanos;
+    public TextField txtBanos;
 
 
-    private CambiaEscenas cambia = new CambiaEscenas();
+    public CambiaEscenas cambia = new CambiaEscenas();
 
-    private PublicacionInmuebleService publicacionInmuebleService = new PublicacionInmuebleService();
+    public PublicacionInmuebleService publicacionInmuebleService = new PublicacionInmuebleService();
 
     @FXML
     public void initialize() {
@@ -50,7 +50,7 @@ public class BusquedaController {
     }
 
     @FXML
-    private void buscarAvanzada(ActionEvent event) {
+    public void buscarAvanzada(ActionEvent event) {
         String tipo = comboTipo.getValue();
         String estado = comboEstado.getValue();
         Integer estratoMin = parseInteger(txtEstratoMin.getText());

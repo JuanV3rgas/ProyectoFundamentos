@@ -16,14 +16,22 @@ import java.nio.file.Files;
 
 public class EditarPublicacionController {
 
-    @FXML private TextField txtDireccion;
-    @FXML private TextField txtHabitaciones;
-    @FXML private TextField txtBanos;
-    @FXML private TextField txtArea;
-    @FXML private TextField txtPrecio;
-    @FXML private ComboBox<String> comboTipo;
-    @FXML private ComboBox<String> comboEstado;
-    @FXML private ComboBox<String> comboEstrato;
+    @FXML
+    public TextField txtDireccion;
+    @FXML
+    public TextField txtHabitaciones;
+    @FXML
+    public TextField txtBanos;
+    @FXML
+    public TextField txtArea;
+    @FXML
+    public TextField txtPrecio;
+    @FXML
+    public ComboBox<String> comboTipo;
+    @FXML
+    public ComboBox<String> comboEstado;
+    @FXML
+    public ComboBox<String> comboEstrato;
     private byte[] imagen1;
 
     private Inmueble inmuebleActual;
