@@ -2,8 +2,6 @@ package com.fundamentos.proyecto.dao;
 
 import com.fundamentos.proyecto.model.Conversacion;
 import com.fundamentos.proyecto.model.Mensaje;
-import com.fundamentos.proyecto.util.DBConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +13,8 @@ public class MensajeDAO {
         this.conexion = conexion;
     }
 
-    // Insertar mensaje (FECHA por defecto = CURRENT_DATE en la BD)
     public void insertarMensaje(int publicacionId, int emisorId, int receptorId, String contenido) {
-        String sql = "INSERT INTO Mensajes (FK_ID_PUBLICACION, EMISOR_ID, RECEPTOR_ID, CONTENIDO) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO MENSAJES (FK_ID_PUBLICACION, EMISOR_ID, RECEPTOR_ID, CONTENIDO) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
             stmt.setInt(1, publicacionId);
             stmt.setInt(2, emisorId);
@@ -50,9 +47,7 @@ public class MensajeDAO {
             GROUP BY FK_ID_PUBLICACION, otroUsuarioId
         ) c
         """;
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            // El mismo usuario va en los ?
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setInt(1, usuarioActualId);
             ps.setInt(2, usuarioActualId);
             ps.setInt(3, usuarioActualId);
@@ -71,7 +66,6 @@ public class MensajeDAO {
         return lista;
     }
 
-        // Devuelve todos los mensajes entre dos usuarios para una publicación dada (ordenados por fecha)
     public List<Mensaje> obtenerMensajesPorConversacion(int idPublicacion, int usuario1, int usuario2) {
         List<Mensaje> mensajes = new ArrayList<>();
         String sql = "SELECT * FROM MENSAJES " +
@@ -102,6 +96,4 @@ public class MensajeDAO {
         }
         return mensajes;
     }
-
-
 }

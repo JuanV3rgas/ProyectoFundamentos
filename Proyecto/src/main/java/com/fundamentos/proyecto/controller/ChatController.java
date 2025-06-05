@@ -39,7 +39,12 @@ public class ChatController {
 
     private CambiaEscenas cambia = new CambiaEscenas();
 
+
     public void initData(int idPublicacion, int usuarioActualId, int receptorId, Connection conexion) {
+        if (conexion == null) {
+            throw new IllegalArgumentException("La conexión a la base de datos no puede ser null");
+        }
+
         this.idPublicacion = idPublicacion;
         this.usuarioActualId = usuarioActualId;
         this.receptorId = receptorId;
@@ -48,22 +53,32 @@ public class ChatController {
 
         cargarListaConversaciones();
 
-        Usuario receptor = UsuarioDAO.obtenerUsuarioPorId(receptorId, conexion);
-        chatTitle.setText(receptor != null ? receptor.getNombre() : "Desconocido");
-
-        cargarMensajes();
+        if (idPublicacion > 0 && receptorId > 0) {
+            // Hay un chat seleccionado: carga el título y los mensajes de la conversación
+            Usuario receptor = UsuarioDAO.obtenerUsuarioPorId(receptorId, conexion);
+            chatTitle.setText(receptor != null ? receptor.getNombre() : "Desconocido");
+            cargarMensajes();
+        } else {
+            // No hay chat seleccionado, muestra sólo la lista de chats y limpia la ventana de mensajes
+            chatTitle.setText("Selecciona un chat");
+            mensajesVBox.getChildren().clear();
+        }
 
         enviarButton.setOnAction(e -> enviarMensaje());
         mensajeTextField.setOnAction(e -> enviarMensaje());
 
+        // Timer para refrescar mensajes si hay chat seleccionado
         if (timer != null) timer.cancel();
-        timer = new Timer(true);
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                Platform.runLater(ChatController.this::cargarMensajes);
-            }
-        }, 0, 1000);
+
+        if (idPublicacion > 0 && receptorId > 0) {
+            timer = new Timer(true);
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    Platform.runLater(ChatController.this::cargarMensajes);
+                }
+            }, 0, 1000);
+        }
     }
 
     public void closeChat() {
@@ -81,11 +96,9 @@ public class ChatController {
             chatPreview.setPadding(new Insets(6, 8, 6, 18));
             chatPreview.setStyle("-fx-background-color: transparent;");
 
-            // Obtener el nombre del otro usuario
             Usuario otro = UsuarioDAO.obtenerUsuarioPorId(conv.getOtroUsuarioId(), conexion);
             String nombreUsuario = (otro != null) ? otro.getNombre() : "Usuario " + conv.getOtroUsuarioId();
 
-            // Crea un VBox con el nombre y el último mensaje
             VBox textoPreview = new VBox();
             Label nombre = new Label(nombreUsuario);
             nombre.setStyle("-fx-font-size: 15px; -fx-text-fill: white; -fx-font-weight: bold;");
@@ -95,8 +108,8 @@ public class ChatController {
 
             chatPreview.getChildren().add(textoPreview);
 
+            // Siempre pasa tu usuario como usuarioActualId, el otro como receptorId
             chatPreview.setOnMouseClicked(e -> {
-                // Cambia de chat al hacer click
                 initData(conv.getIdPublicacion(), usuarioActualId, conv.getOtroUsuarioId(), conexion);
             });
 
@@ -105,12 +118,18 @@ public class ChatController {
     }
 
     private void cargarMensajes() {
+        System.out.println("Cargando mensajes para idPublicacion=" + idPublicacion +
+                ", usuarioActualId=" + usuarioActualId +
+                ", receptorId=" + receptorId);
+
         mensajesVBox.getChildren().clear();
         List<Mensaje> mensajes = mensajeDAO.obtenerMensajesPorConversacion(idPublicacion, usuarioActualId, receptorId);
+
+        System.out.println("Mensajes recuperados: " + mensajes.size());
         for (Mensaje m : mensajes) {
+            System.out.println("Mensaje: " + m.getEmisorId() + "->" + m.getReceptorId() + " : " + m.getContenido());
             mensajesVBox.getChildren().add(crearBurbujaMensaje(m));
         }
-        // Auto-scroll al final
         if (!mensajesVBox.getChildren().isEmpty() && mensajesScrollPane != null) {
             Platform.runLater(() -> mensajesScrollPane.setVvalue(1.0));
         }
@@ -122,7 +141,7 @@ public class ChatController {
         mensajeDAO.insertarMensaje(idPublicacion, usuarioActualId, receptorId, texto);
         mensajeTextField.clear();
         cargarMensajes();
-        cargarListaConversaciones(); // Actualiza la barra lateral si es necesario
+        cargarListaConversaciones();
     }
 
     // Burbujas alineadas derecha/izquierda según remitente
@@ -160,5 +179,4 @@ public class ChatController {
     private void back(ActionEvent event) {
         cambia.cambiarEscena(event, "/view/principal_sin_login.fxml");
     }
-
 }

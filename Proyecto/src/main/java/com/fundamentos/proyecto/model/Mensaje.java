@@ -17,7 +17,6 @@ public class Mensaje {
         this.fecha = fecha;
     }
 
-    // Getters y setters
     public int getId() { return id; }
     public int getPublicacionId() { return publicacionId; }
     public int getEmisorId() { return emisorId; }

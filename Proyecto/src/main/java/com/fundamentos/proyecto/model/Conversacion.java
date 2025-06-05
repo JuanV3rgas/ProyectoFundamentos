@@ -5,7 +5,6 @@ public class Conversacion {
     private int otroUsuarioId;
     private String ultimoMensaje;
 
-
     public Conversacion(int idPublicacion, int otroUsuarioId, String ultimoMensaje) {
         this.idPublicacion = idPublicacion;
         this.otroUsuarioId = otroUsuarioId;
