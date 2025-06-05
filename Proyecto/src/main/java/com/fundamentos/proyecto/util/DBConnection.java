@@ -1,13 +1,27 @@
 package com.fundamentos.proyecto.util;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DBConnection {
-    private static final String URL = "jdbc:h2:file:C:/Users/juanv/OneDrive/Documentos/ProyectoFundamentos/Proyecto/src/main/resources/db/bienesRaices;AUTO_SERVER=TRUE";
-    private static final String USER = "david";
-    private static final String PASSWORD = "";
+    private static String URL;
+    private static String USER;
+    private static String PASSWORD;
+
+    static {
+        try (InputStream input = DBConnection.class.getClassLoader().getResourceAsStream("db.properties")) {
+            Properties prop = new Properties();
+            prop.load(input);
+            URL = prop.getProperty("db.url");
+            USER = prop.getProperty("db.user");
+            PASSWORD = prop.getProperty("db.password");
+        } catch (Exception e) {
+            throw new RuntimeException("Error cargando db.properties", e);
+        }
+    }
 
     public static Connection getConnection() throws SQLException {
         try {

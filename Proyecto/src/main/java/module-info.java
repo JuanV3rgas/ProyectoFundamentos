@@ -12,4 +12,7 @@ module com.fundamentos.proyecto {
     opens com.fundamentos.proyecto.model to javafx.base;
     exports com.fundamentos.proyecto.app;
     exports com.fundamentos.proyecto.controller;
+    exports com.fundamentos.proyecto.util;
+    exports com.fundamentos.proyecto.dao;
+    exports com.fundamentos.proyecto.model;
 }
