@@ -13,6 +13,8 @@ import java.util.List;
 
 public class CambiaEscenas {
 
+    //PRUEBA GITHUBACTIONS
+
     public void cambiarEscena(ActionEvent event, String rutaFxml) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(rutaFxml));
