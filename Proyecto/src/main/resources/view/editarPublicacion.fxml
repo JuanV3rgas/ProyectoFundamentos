@@ -284,7 +284,7 @@
                         </LinearGradient>
                     </textFill>
                 </Button>
-            <Button layoutX="647.0" layoutY="471.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #363432;" text="Cancelar" underline="true">
+            <Button layoutX="647.0" layoutY="471.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #363432;" text="Cancelar" underline="true">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>

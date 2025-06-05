@@ -103,11 +103,6 @@ public class EditarPublicacionController {
         }
     }
 
-    @FXML
-    private void cancelar(ActionEvent event) {
-        Stage stage = (Stage) txtDireccion.getScene().getWindow();
-        stage.close();
-    }
 
     @FXML
     private void comboBoxEvent(ActionEvent event) {
