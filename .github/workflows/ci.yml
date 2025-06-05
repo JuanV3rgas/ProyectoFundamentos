@@ -1,31 +1,37 @@
-name: Java CI (Maven)
+name: Java CI con Maven y JavaFX
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Traer tu código
-      - uses: actions/checkout@v3
+      - name: Checkout del código
+        uses: actions/checkout@v4
 
-      # 2. Instalar JDK (ajusta la versión a la que uses en tu pom.xml)
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+      - name: Instalar JDK 17
+        uses: actions/setup-java@v4
         with:
-          distribution: Temurin
           java-version: '17'
-          cache: maven
+          distribution: 'temurin'
 
-      # 3. Construir y empaquetar tu proyecto
-      - name: Build with Maven
-        run: mvn -B clean package
+      - name: Cache de dependencias Maven
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
-      # 4. Ejecutar tests
-      - name: Run tests
-        run: mvn test
+      - name: Compilar con Maven
+        run: mvn -B clean compile
+
+      - name: Ejecutar pruebas
+        run: mvn -B test
