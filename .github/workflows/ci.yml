@@ -34,3 +34,6 @@ jobs:
         run: mvn -B clean compile
         working-directory: Proyecto
 
+      - name: Ejecutar pruebas con Maven
+        run: mvn -B test
+        working-directory: Proyecto

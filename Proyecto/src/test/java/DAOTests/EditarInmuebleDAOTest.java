@@ -1,10 +1,12 @@
+package DAOTests;
+
 import org.junit.jupiter.api.*;
 import com.fundamentos.proyecto.dao.*;
 import com.fundamentos.proyecto.model.Inmueble;
 
 import java.math.BigDecimal;
 
-public class EditarInmuebleDAOTest {
+public class  EditarInmuebleDAOTest {
     @BeforeAll
     static void setUpDatabase() {
         TestDatabaseUtil.inicializarSchema();
