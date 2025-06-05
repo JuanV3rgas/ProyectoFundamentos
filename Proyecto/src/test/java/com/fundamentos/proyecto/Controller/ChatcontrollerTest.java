@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ChatControllerTest {
+public class ChatcontrollerTest {
 
     private ChatController controller;
 

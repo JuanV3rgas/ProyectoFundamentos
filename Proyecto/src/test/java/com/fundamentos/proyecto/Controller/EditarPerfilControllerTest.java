@@ -1,5 +1,4 @@
-package com.fundamentos.proyecto.controller;
-
+package com.fundamentos.proyecto.Controller;
 import com.fundamentos.proyecto.controller.EditarPerfilController;
 import com.fundamentos.proyecto.model.Usuario;
 import javafx.scene.control.TextField;
