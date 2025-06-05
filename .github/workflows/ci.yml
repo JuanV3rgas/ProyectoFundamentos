@@ -35,5 +35,5 @@ jobs:
         working-directory: Proyecto
 
       - name: Ejecutar pruebas
-        run: mvn -B test
+        run: mvn -B test -Dtestdb=true
         working-directory: Proyecto

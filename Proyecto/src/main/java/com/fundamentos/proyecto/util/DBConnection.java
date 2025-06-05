@@ -15,8 +15,13 @@ public class DBConnection {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        // Si está activada la propiedad de test, usa H2 en memoria y carga el script de test.
+        String testProperty = System.getProperty("testdb");
+        if ("true".equals(testProperty)) {
+            String testUrl = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'src/test/resources/schema.sql'";
+            return DriverManager.getConnection(testUrl, "sa", "");
+        }
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
-
 }
-
