@@ -35,3 +35,4 @@ jobs:
 
       - name: Ejecutar pruebas
         run: mvn -B test
+        working-directory: Proyecto
